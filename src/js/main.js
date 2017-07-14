@@ -19,7 +19,7 @@ window.onload = () => {
 	team1Time.innerHTML = getTime(timer1.time);
 	team2Time.innerHTML = getTime(timer2.time);
 
-	// Lazy but quick way of resetting everything
+	// Stupid easy quick way of resetting everything
 	Array.from(resetBtns).forEach(btn => {
 		btn.addEventListener('click', () => {
 			location.reload();
@@ -40,7 +40,7 @@ window.onload = () => {
 		swapBtns[0].style.display = 'inline-block';
 		turn++;
 
-		updateTimers = setInterval(() => {
+		updateTimers = setInterval(() => { // Every second check if a timer hits 0 then reward the winner
 			if (timer1.time === 0) {
 				reward('Team 2'); // Team 2 wins
 			} else if (timer2.time === 0) {
@@ -53,7 +53,7 @@ window.onload = () => {
 		},1000);
 	});
 
-	Array.from(swapBtns).forEach(btn => {
+	Array.from(swapBtns).forEach(btn => { // Action buttons that swap turns.
 		btn.addEventListener('click', () => {
 			swapTurns();
 		});
@@ -61,22 +61,24 @@ window.onload = () => {
 }
 
 function swapTurns() {
-	if (turn === 1) {
+	if (turn === 1) { // If it's player 1's turn
 		turn++;
 		timer1.pauseTimer();
 		timer2.pauseTimer();
+		// Fancy styling
 		swapBtns[0].style.display = 'none';
 		swapBtns[1].style.display = 'inline-block';
-	} else {
+	} else { // If it's player 2's turn
 		turn--;
 		timer1.pauseTimer();
 		timer2.pauseTimer();
+		// Fancy styling
 		swapBtns[0].style.display = 'inline-block';
 		swapBtns[1].style.display = 'none';
 	}
 }
 
-function getTime(time) {
+function getTime(time) { // Returns how much time each timer has
 	var hours = Math.floor(time / 3600);
 	time = time - hours * 3600;
 
@@ -86,10 +88,11 @@ function getTime(time) {
 	return hours + ' hour(s), ' + minutes + ' minutes, ' + seconds + ' seconds';
 }
 
-function reward(winner) {
-	clearInterval(updateTimers);
+function reward(winner) { // Game ends
+	clearInterval(updateTimers); // Stop timers
 	timer1.stopTimer();
 	timer2.stopTimer();
+	// Fancy styling
 	win.innerHTML     = winner + ' won!';
 	end.style.display = 'block';
 	end.style.zIndex  = '3';
