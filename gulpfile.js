@@ -1,6 +1,5 @@
 const gulp     = require('gulp');
 const rollup   = require('gulp-rollup');
-const uglify   = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
  
 gulp.task('bundle', () => {
@@ -13,9 +12,8 @@ gulp.task('bundle', () => {
 					"plugins": ["external-helpers"]
 				})
 			],
-			entry: './src/js/main.js'
+			entry: './src/js/app.js'
 		}))
-		.pipe(uglify())
 		.pipe(gulp.dest('dist/js'));
 });
 
@@ -25,6 +23,6 @@ gulp.task('minify-css', () => {
 		.pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('default', ['bundle', 'minify-css'], () => {
+gulp.task('default', ['minify-css', 'bundle'], () => {
 	console.log('Files prepared!');
 });

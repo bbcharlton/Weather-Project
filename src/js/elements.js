@@ -1,0 +1,9 @@
+export const LOADING          = document.getElementById('loading');
+export const CONTAINER        = document.getElementById('weather-container');
+export const WEATHER          = document.getElementById('weather');
+export const TEMPERATURE      = document.getElementById('temperature');
+export const TEMPERATURE_MORE = document.getElementById('temperature-more');
+export const NAME             = document.getElementById('name');
+export const SEARCH           = document.getElementById('search');
+export const INPUT            = document.getElementById('input');
+export const DATE             = document.getElementById('date');
