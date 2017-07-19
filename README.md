@@ -6,7 +6,7 @@ Make sure you have [Gulp](http://gulpjs.com/) installed in order to run my gulpf
 > ### 1. Clone the repo.
 
 ```shell
-git clone https://github.com/bbcharlton/Chess-Project.git
+git clone https://github.com/bbcharlton/Weather-Project.git
 ```
 
 > ### 2. Install dev dependencies.
