@@ -19,7 +19,7 @@ This loads in all the development dependencies used in my gulpfile.
 
 > ### 3. Add your OpenWeatherMap API key.
 
-If you don't have an OpenWeatherMap API key already, you can signup and get one from the [OpenWeatherMap API Page](http://openweathermap.org/appid). On line 10 in `app.js` add your API key for the `KEY` constant.
+If you don't have an OpenWeatherMap API key already, you can signup and get one from the [OpenWeatherMap API Page](http://openweathermap.org/appid). On line 36 in `app.js` add your API key for the `KEY` constant.
 
 > ### 4. Run Gulp task.
 
